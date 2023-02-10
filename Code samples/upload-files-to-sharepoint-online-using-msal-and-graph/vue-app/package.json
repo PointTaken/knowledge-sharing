@@ -1,0 +1,19 @@
+{
+  "name": "vue-app",
+  "version": "0.0.0",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "serve": "vite preview"
+  },
+  "dependencies": {
+    "@azure/msal-browser": "^2.19.0",
+    "@microsoft/microsoft-graph-client": "^3.0.0",
+    "buffer": "^6.0.3",
+    "vue": "^3.2.16"
+  },
+  "devDependencies": {
+    "@vitejs/plugin-vue": "^1.9.3",
+    "vite": "^2.6.4"
+  }
+}
