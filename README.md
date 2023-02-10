@@ -1,8 +1,20 @@
-# Point Taken Knowledge Sharing
+<img style="max-width:900px" src="./img/point-taken-logo-header.png" />
 
+## Point Taken Knowledge Sharing
 This repo is for [Point Taken](https://pointtaken.no/) employees to share resources that could be useful for others.
 
-### How to use this repository
+#### Who is Point Taken employees, and why you should use their resources?
+Point Taken is a consultant company in Norway that is focused on solutions in the Microsoft sphere.
+
+We, the employees, are developers and/or tech-people that specialize in M365 solutions, SharePoint, Teams-apps/solutions,  Azure, Power Apps/Power Platform, Power BI, Dataverse, Dynamics CRM ++. Basically between us we cover everything you need to create great solutions in the M365 sphere (and beyond).
+
+And we want to share our knowledge both internally and externally - thats why we created this repository. Sharing is caring <3 
+
+<br/>
+<br/>
+
+---
+## How to use this repository
 
 #### For contributors
 - Clone the repository to your computer
@@ -17,3 +29,4 @@ This repo is for [Point Taken](https://pointtaken.no/) employees to share resour
 - Use the resources as you like. Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
 - Give the repo a star * 
+- If you would like our professional help [you can fill find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
