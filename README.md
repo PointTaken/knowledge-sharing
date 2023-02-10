@@ -11,7 +11,6 @@ We, the employees, are developers and/or tech-people that specialize in M365 sol
 And we want to share our knowledge both internally and externally - thats why we created this repository. Sharing is caring :hearts: 
 
 <br/>
-<br/>
 
 ---
 ## How to use this repository
@@ -31,7 +30,6 @@ And we want to share our knowledge both internally and externally - thats why we
 - Give the repo a star :star:
 - If you would like our professional help [you can fill find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
 
-<br/>
 <br/>
 
 ---
