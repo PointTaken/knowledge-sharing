@@ -8,7 +8,7 @@ Point Taken is a consultant company in Norway that is focused on solutions in th
 
 We, the employees, are developers and/or tech-people that specialize in M365 solutions, SharePoint, Teams-apps/solutions,  Azure, Power Apps/Power Platform, Power BI, Dataverse, Dynamics CRM ++. Basically between us we cover everything you need to create great solutions in the M365 sphere (and beyond).
 
-And we want to share our knowledge both internally and externally - thats why we created this repository. Sharing is caring <3 
+And we want to share our knowledge both internally and externally - thats why we created this repository. Sharing is caring :hearts: 
 
 <br/>
 <br/>
@@ -28,5 +28,5 @@ And we want to share our knowledge both internally and externally - thats why we
 #### For everyone else
 - Use the resources as you like. Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
-- Give the repo a star * 
+- Give the repo a star :star:
 - If you would like our professional help [you can fill find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
