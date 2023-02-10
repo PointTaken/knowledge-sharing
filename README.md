@@ -26,7 +26,14 @@ And we want to share our knowledge both internally and externally - thats why we
 
 
 #### For everyone else
-- Use the resources as you like. Larger code samples will include their own readme.md file that describes how to run them. 
+- Use the resources as you like (but read the disclaimer below first). Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
 - Give the repo a star :star:
 - If you would like our professional help [you can fill find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
+
+<br/>
+<br/>
+
+---
+## Disclaimer
+We provide our resources as is, and we make no guarantees about how others might use them. Some of the resources (like powershell, but also others) could break things in your environment if you don't know what your doing. So please tread carefully.
