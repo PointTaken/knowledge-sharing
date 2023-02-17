@@ -21,8 +21,6 @@ And your newly created App Reg need a API permission
 * AuditLog.Read.All
 * User.Read.All
 
-![graph-api-permissions](/static/images/staled-azure-ad-users/staled-azure-ad-users-1.png)
-
 ---
 
 # Script content
