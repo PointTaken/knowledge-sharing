@@ -46,8 +46,10 @@ git branch <branch name>
 
 
 //Switch branch
-git chekout <branch name>
+git checkout <branch name>
 
+// Create new branch and then switch to it
+git checkout -b <branch name>
 
 //Create new branch (branch-B) based on existing branch(branch-A) and switch to it
 git checkout -b <branch-B-name> <branch-A-name>
@@ -56,7 +58,7 @@ git checkout -b <branch-B-name> <branch-A-name>
 git fetch && git checkout <remote-branch-name>
 
 //Merge branch (branch-A) into other branch (branch-B)
-git chekout <branch-B-name>
+git checkout <branch-B-name>
 git merge <branch-A-name>
 
 
@@ -94,7 +96,7 @@ git revert HEAD
 ```
 
 ## MERGE CONFLICTS
-_There are a lot of great tools for viewing merge conflicts, and if you are new to git I especially reccomend using such a tool (I prefer that myselfe, even though I have used git for years)_
+_There are a lot of great tools for viewing merge conflicts, and if you are new to git I especially recommend using such a tool (I prefer that myself, even though I have used git for years)_
 ```
 //View the difference that creates the conflict
 git diff

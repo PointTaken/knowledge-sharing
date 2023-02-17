@@ -13,7 +13,7 @@ Once you have initialized your project you need to run `npm install` to install 
 
 ## Connect to environment, create temporary solution and push solution to env
 ```powershell
-//firts authenticate (need system administrator/ system costumizer permissions)
+//first authenticate (need system administrator/ system customizer permissions)
 pac auth create --url https://myenvironment......
 
 //you can use auth list to see current connecions
