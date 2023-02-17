@@ -23,7 +23,7 @@ And we want to share our knowledge both internally and externally - that's why w
     - **PowerShell** - will contain both markdown files that describe larger POCs, and pure powershell files.
 - There is a document, [Other-resources.md](/Other-resources.md), where you can add links to other useful resources.
 
-> Remember to **give the resource a descriptive name**, and **use a prefix** to show what type of tech thats being used. E.g "ADD-staleUsers" or "JS-Vue-AppToUploadFiles". There is a <ins>[markdown template]("/TEMPLATE.md")</ins> file you can use as a starting point.
+> Remember to **give the resource a descriptive name**, and **use a prefix** to show what type of tech thats being used. E.g "ADD-staleUsers" or "JS-Vue-AppToUploadFiles". There is a <ins>[markdown template](/TEMPLATE.md)</ins> file you can use as a starting point.
 #### For everyone else
 - Use the resources as you like (but read the disclaimer below first). Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
