@@ -1,4 +1,4 @@
-<img style="max-width:900px" src="./img/point-taken-logo-header.png" />
+<img style="max-width:900px" src="point-taken-logo-header.png" />
 
 ## Point Taken Knowledge Sharing
 This repo is for [Point Taken](https://pointtaken.no/) employees to share resources that could be useful for others.
@@ -17,18 +17,18 @@ And we want to share our knowledge both internally and externally - thats why we
 
 #### For contributors
 - Clone the repository to your computer
-- Create your resource in the appropriate folder
+- Create your resource in the appropriate folder.
     - **Cheat sheets** - as the name describes this folder contains various cheat sheets
     - **Code samples** - a folder for code samples. Larger samples will provide a readme-file that explains how to run that sample. 
     - **PowerShell** - will contain both markdown files that describes larger POCs, and pure powershell files.
-- There is a document, [Other-resources.md](/Other-resources.md), where you can add links to other useful resources. 
+- There is a document, [Other-resources.md](/Other-resources.md), where you can add links to other useful resources.
 
-
+> Remember to **give the resource a descriptive name**, and **use a prefix** to show what type of tech thats being used. E.g "ADD-staleUsers" or "JS-Vue-AppToUploadFiles". There is a <ins>[markdown template]("/TEMPLATE.md")</ins> file you can use as a starting point.
 #### For everyone else
 - Use the resources as you like (but read the disclaimer below first). Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
 - Give the repo a star :star:
-- If you would like our professional help [you can fill find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
+- If you would like our professional help [you can find the updated contact information our website](https://pointtaken.no/kontaktinformasjon/)
 
 <br/>
 
