@@ -32,7 +32,7 @@ Somebody that I used to know, forgot to set the indexed flag of some sites. And 
 So how can we discover if a bag is indexed?
 
 If we get _all_ the property bag values, we'll discover that there is a property bag entry called "vti_indexedpropertykeys".
-Sounds promising. If we retrieve the value, we see that it is a pipeseparated messy string.
+Sounds promising. If we retrieve the value, we see that it is a pipe separated messy string.
 ```
 WBDoAGUAbQBlAFBAcgBpAG0AYQByAHkA|XeBDAG4AUABfAFAAcgBvAHYAaQBzAGkBbwBuAGkAbgBnAFQAZQBtAHAAbABhAHQAZQBJAGQA|
 ```
