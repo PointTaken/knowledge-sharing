@@ -61,6 +61,8 @@ git fetch && git checkout <remote-branch-name>
 git checkout <branch-B-name>
 git merge <branch-A-name>
 
+//Check file in another branch
+git show <branch-name>:<file-name>
 
 //Delete branch
 git branch -d <branch name>
