@@ -22,6 +22,12 @@ and ``git commit -m initial``.
 "But you haven't done anything worth saving yet!" 
 No. But I'm about to - and if something happens, I can diff with the original.
 
+Both "git init" and "commit" are fast, and do not require noticeable disk space.
+
+As there is no downside - why not?
+
+I do _not_ always push my code to an upstream repository. 
+
 ## Never work in main
 Before I start making changes, I create a branch where I can do my groundbraking stuff, 
 which won't get overwritten by an overzealous colleague.
