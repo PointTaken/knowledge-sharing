@@ -6,8 +6,6 @@ svn, subversion, Team Foundation Server...
 
 git is best, no protest.
 
-However, if you mess things up, you may come to envy Putin and his situation in Ukraine.
-
 In order to avoid merge conflicts and the messy job of cleaning up such conflicts, I have some rules that I use:
 
 Main rules:
