@@ -66,4 +66,4 @@ Columns are defined with type specific AttributMetadata
 * Relation information is set manually beginning on line 51 in Common.cs
 * Add you environment info in the app.config-file
 
-[You can view/download the console app here](console_app)
+[You can view/download the console app here](https://github.com/PointTaken/knowledge-sharing/tree/main/Code%20samples/CSharp-Dataverse-Create%20tables%20and%20columns%20using%20code/console-app)
