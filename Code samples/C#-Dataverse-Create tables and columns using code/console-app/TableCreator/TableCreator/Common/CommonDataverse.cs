@@ -1,6 +1,4 @@
-﻿//using HusleieFunctions.Models;
-//using Microsoft.AspNetCore.Http;
-using Microsoft.PowerPlatform.Dataverse.Client;
+﻿using Microsoft.PowerPlatform.Dataverse.Client;
 
 
 namespace TableCreator.Common

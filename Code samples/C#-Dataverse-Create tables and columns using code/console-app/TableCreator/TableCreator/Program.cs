@@ -53,6 +53,7 @@ EntityMenu:
     {
         case TCEntity.Cancel:
             goto Exit;
+        // Add table info in cases below
         case TCEntity.Table1:
             entityName = "prefix_table1";
             entityDisplayName = "Table1";
