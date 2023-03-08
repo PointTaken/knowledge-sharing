@@ -1,0 +1,88 @@
+{
+  "format": 1,
+  "restore": {
+    "E:\\CODE\\knowledge-sharing\\Code samples\\C#-Dataverse-Create tables and columns using code\\console-app\\TableCreator\\TableCreator\\TableCreator.csproj": {}
+  },
+  "projects": {
+    "E:\\CODE\\knowledge-sharing\\Code samples\\C#-Dataverse-Create tables and columns using code\\console-app\\TableCreator\\TableCreator\\TableCreator.csproj": {
+      "version": "1.0.0",
+      "restore": {
+        "projectUniqueName": "E:\\CODE\\knowledge-sharing\\Code samples\\C#-Dataverse-Create tables and columns using code\\console-app\\TableCreator\\TableCreator\\TableCreator.csproj",
+        "projectName": "TableCreator",
+        "projectPath": "E:\\CODE\\knowledge-sharing\\Code samples\\C#-Dataverse-Create tables and columns using code\\console-app\\TableCreator\\TableCreator\\TableCreator.csproj",
+        "packagesPath": "C:\\Users\\oyvin\\.nuget\\packages\\",
+        "outputPath": "E:\\CODE\\knowledge-sharing\\Code samples\\C#-Dataverse-Create tables and columns using code\\console-app\\TableCreator\\TableCreator\\obj\\",
+        "projectStyle": "PackageReference",
+        "configFilePaths": [
+          "C:\\Users\\oyvin\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+        ],
+        "originalTargetFrameworks": [
+          "net6.0"
+        ],
+        "sources": {
+          "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.sitefinity.com/nuget": {}
+        },
+        "frameworks": {
+          "net6.0": {
+            "targetAlias": "net6.0",
+            "projectReferences": {}
+          }
+        },
+        "warningProperties": {
+          "warnAsError": [
+            "NU1605"
+          ]
+        }
+      },
+      "frameworks": {
+        "net6.0": {
+          "targetAlias": "net6.0",
+          "dependencies": {
+            "Microsoft.PowerPlatform.Dataverse.Client": {
+              "target": "Package",
+              "version": "[0.5.17, )"
+            }
+          },
+          "imports": [
+            "net461",
+            "net462",
+            "net47",
+            "net471",
+            "net472",
+            "net48",
+            "net481"
+          ],
+          "assetTargetFallback": true,
+          "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.win-x64",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            },
+            {
+              "name": "Microsoft.WindowsDesktop.App.Ref",
+              "version": "[6.0.14, 6.0.14]"
+            }
+          ],
+          "frameworkReferences": {
+            "Microsoft.NETCore.App": {
+              "privateAssets": "all"
+            }
+          },
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.103\\RuntimeIdentifierGraph.json"
+        }
+      }
+    }
+  }
+}
