@@ -4,6 +4,8 @@
 
 *Confessions of a programmer trapped in a no-code hellscape*
 
+***This is working out great! Whoop-di-dooo***
+
 In a project we needed to develop and maintain a database structure in Dataverse between three environments (DEV, TEST, PROD). The initial plan was to use tools available in the Power Platform GUI. When they failed to update or migrate the tables and columns correctly the next step was to code it.
 
 ＼(＾O＾)／
