@@ -18,14 +18,14 @@ Add-PnPApp -Path "./project-wp.sppkg"  -Publish
 
 ```
 
-### **Making the app avialable tenant wide**
+### **Making the app available tenant wide**
 Use -SkipFeatureDeployment to centrally deployed the solution across the tenant.
 ```powershell
 Add-PnPApp -Path "./project-wp.sppkg" -Connection $appCatConnection -Publish -SkipFeatureDeployment
 ```
 
 ### **Update exisiting app**
-Use -Overwrite to update an exisiting solution.
+Use -Overwrite to update an existing solution.
 ```powershell
 Add-PnPApp -Path "./project-wp.sppkg" -Publish -Overwrite
 ```
