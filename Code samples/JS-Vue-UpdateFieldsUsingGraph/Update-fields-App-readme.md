@@ -1,7 +1,6 @@
 # UPDATE FIELDS IN SHAREPOINT USING MICROSOFT GRAPH
 This is a repo for democode of how to update different field valies in SharePoint using Microsoft Graph. 
 
-###  **❗  NOTE: THIS CODE IS NOT COMPLETE YET** 
 ## How to run the example
 
 1. Clone the repository to your computer
