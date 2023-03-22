@@ -17,7 +17,8 @@ Connect-AzureAD​
 # Enable one of your Azure AD PIM roles.
 Enable-DCAzureADPIMRole​
 
-# Enable multiple Azure AD PIM roles.
+# Enable multiple Azure AD PIM roles with manual adding reason and timelenght 
+Enable-DCAzureADPIMRole -RolesToActivate 'Exchange Administrator', 'Authentication Administrator'
 
 # Fully automate Azure AD PIM role activation.
-Enable-DCAzureADPIMRole -RolesToActivate 'Exchange Administrator', 'Intune administrator', 'Global Reader', 'User Administrator', 'Security Administrator', 'Cloud Application Administrator', 'Identity Governance Administrator', 'SharePoint Administrator' -UseMaximumTimeAllowed -Reason 'Security Hardening.'
+Enable-DCAzureADPIMRole -RolesToActivate 'Exchange Administrator', 'Security Administrator', 'Cloud Application Administrator', 'Identity Governance Administrator', 'SharePoint Administrator' -UseMaximumTimeAllowed -Reason 'Security Hardening.'
