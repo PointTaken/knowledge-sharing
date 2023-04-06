@@ -2,9 +2,7 @@
 
 ## A Console application for creating and updating tables, columns and relations in Dataverse\_\_
 
-*Confessions of a programmer trapped in a no-code hellscape*
-
-In a project we needed to develop and maintain a database structure in Dataverse between three environments (DEV, TEST, PROD). The initial plan was to use tools available in the Power Platform GUI. When they failed to update or migrate the tables and columns correctly the next step was to code it.
+In a project we needed to develop and maintain a database structure in Dataverse between three environments (DEV, TEST, PROD). The initial plan was to use tools available in the Power Platform GUI. When they (for some reason) failed to update or migrate the tables and columns correctly the next step was to code it.
 
 ＼(＾O＾)／
 
@@ -42,6 +40,7 @@ Columns are defined with type specific AttributMetadata
         MaxLength = 1000
     }
 
+
 ```
 
 **Decimal:**
@@ -58,6 +57,7 @@ Columns are defined with type specific AttributMetadata
         MaxValue = 100000000000,
         Precision = 10,
     }
+
 
 ```
 
