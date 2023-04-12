@@ -20,7 +20,7 @@ Add here, or add it as a file on its own. Remember to give it the same prefix an
 ### How to use this template (delete this section)
 #### Path to awesome
 - copy this file
-- give it a descriptive name
+- give it a descriptive name - do **not** call it readme.md
 - remember to add a prefix to the name to describe what category/tech the resource applies to.
 - save the file in the appropriate folder 
     - **Cheat sheets** - as the name describes this folder contains various cheat sheets
