@@ -16,12 +16,13 @@ And we want to share our knowledge both internally and externally - that's why w
 ## How to use this repository
 
 #### For contributors
-- Clone the repository to your computer
-- Create your resource in the appropriate folder.
+- Create a fork of this repository, and clone that fork to your local computer.
+- Open your local repo in your prefered editor (I recommend VSCode).
+- Create your resource in the appropriate folder. (There is a document, [Other-resources.md](/Other-resources.md), where you can add links to other useful resources.)
     - **Cheat sheets** - as the name describes this folder contains various cheat sheets
     - **Code samples** - a folder for code samples. Larger samples will provide a readme-file that explains how to run that sample. 
     - **PowerShell** - will contain both markdown files that describe larger POCs, and pure powershell files.
-- There is a document, [Other-resources.md](/Other-resources.md), where you can add links to other useful resources.
+- Push your changes back to your forked repo - then create a pull request back to this repo. 
 
 > Remember to **give the resource a descriptive name**, and **use a prefix** to show what type of tech thats being used. E.g "ADD-staleUsers" or "JS-Vue-AppToUploadFiles". There is a <ins>[markdown template](/TEMPLATE.md)</ins> file you can use as a starting point.
 #### For everyone else
