@@ -24,7 +24,10 @@ And we want to share our knowledge both internally and externally - that's why w
     - **PowerShell** - will contain both markdown files that describe larger POCs, and pure powershell files.
 - Push your changes back to your forked repo - then create a pull request back to this repo. 
 
+If you are new to git and GitHub [here is a blogpost that describes step-by-step how to contribute to this repository](https://elischei.com/an-introduction-to-version-control-using-git-and-github/).
+
 > Remember to **give the resource a descriptive name**, and **use a prefix** to show what type of tech thats being used. E.g "ADD-staleUsers" or "JS-Vue-AppToUploadFiles". There is a <ins>[markdown template](/TEMPLATE.md)</ins> file you can use as a starting point.
+
 #### For everyone else
 - Use the resources as you like (but read the disclaimer below first). Larger code samples will include their own readme.md file that describes how to run them. 
 - Tell your friends about this repo - sharing is caring <3
