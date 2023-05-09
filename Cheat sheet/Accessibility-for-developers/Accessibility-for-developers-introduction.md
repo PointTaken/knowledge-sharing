@@ -1,5 +1,3 @@
-<link rel="canonical" href="https://elischei.com/a-beginners-guide-to-web-accessibility-for-developers-part-1-introduction/"/>
-
 # A beginners guide to Web Accessibility for developers: Part 1 – introduction
 > Originally published at [acupof.dev](https://elischei.com/a-beginners-guide-to-web-accessibility-for-developers-part-1-introduction/)
 
@@ -89,3 +87,7 @@ Accessibility is about more than blind people and screen readers, and making the
 Access impairments can be categorized as **cognitive, motor, hearing and visual**, and they can be **situational, temporary or permanent**.
 
 By taking av “accessibility first” approach you will get a better developer experience and help create equal access and equal opportunity by makin the web accessible to all. There are a lot of things to consider but luckily we have resources like WCAG and ARIA to help us create more accessible web applications.
+
+
+
+<link rel="canonical" href="https://elischei.com/a-beginners-guide-to-web-accessibility-for-developers-part-1-introduction/"/>
