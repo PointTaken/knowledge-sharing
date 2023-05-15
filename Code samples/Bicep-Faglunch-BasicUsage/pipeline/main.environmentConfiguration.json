@@ -1,0 +1,8 @@
+{
+	"dev": {
+		"storageSKU": "Standard_LRS"
+	},
+	"prod": {
+		"storageSKU": "Standard_GRS"
+	}
+}
