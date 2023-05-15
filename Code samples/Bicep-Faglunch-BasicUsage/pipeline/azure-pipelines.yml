@@ -1,0 +1,19 @@
+variables:
+    projectName: "faglunchbicep" 
+    vmImage: "windows-latest"
+
+pool:
+    vmImage: $(vmImage)
+
+stages:
+  - stage: BicepDeploy
+    dependsOn: Build
+    condition: and(succeeded(), eq(variables['Build.SourceBranch'], 'refs/heads/master'))
+    jobs:
+      - template: "deploy-infrastructure-job.yml"
+        parameters:
+            env: dev
+            projectName: $(projectName)
+            serviceConnection: sc-serviceconnection-in-devops-todo
+            location: westeurope
+            customerName: pt

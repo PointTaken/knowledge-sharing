@@ -1,0 +1,10 @@
+{
+	"moduleAliases": { 
+		"br": { // br = bicep registry, cr = container registry. Used in the modulePath like this br/cr-modules:<MODULENAME>:v1.0.0
+			"cr-modules": {
+				"registry": "cr.azurecr.io",
+				"modulePath": "bicep/modules"
+			}
+		}
+	}
+}
