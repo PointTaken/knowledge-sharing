@@ -12,7 +12,7 @@ Run the script and authenticate twice - then wait :)
 
 
 # The script
-``` PowerShell
+```Powershell
 #Set Variables
 $SiteURL = "https://"COMPANYSITE".sharepoint.com/"
 $ReportOutput = "C:\Github\AdminOwnerPermissions-new.csv"
