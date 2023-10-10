@@ -2,17 +2,17 @@
 
 # Update the variables
 
-$SiteURL = "https://"COMPANYSITE".sharepoint.com/"
-example: "https://pointtakenas.sharepoint.com/"
+$SiteURL = "https://"COMPANYSITE".sharepoint.com/" example: "[https://pointtakenas.sharepoint.com/](https://pointtakenas.sharepoint.com/)"
 
-$ReportOutput = "C:\Github\AdminOwnerPermissions-new.csv"
+$ReportOutput = "C:\\Github\\AdminOwnerPermissions-new.csv"
 
 # Run
+
 Run the script and authenticate twice - then wait :)
 
-
 # The script
-```Powershell
+
+```powershell
 #Set Variables
 $SiteURL = "https://"COMPANYSITE".sharepoint.com/"
 $ReportOutput = "C:\Github\AdminOwnerPermissions-new.csv"
@@ -69,4 +69,5 @@ Else{
     Write-host -b Green "Report Generated Successfully!"
     Write-host -f Green $ReportOutput
 }
+
 ```
