@@ -15,7 +15,9 @@ Now write `code .` and press enter - this will open the project in VS Code.
 
 Open the package.json file that is located in the root folder of the sample, and take a look at what node version is required. This is listed under "engines".
 
-![](/Code%20samples/How-to-work-with-spfx-samples/img/node-version.png).
+![](/Code%20samples/How-to-work-with-spfx-samples/img/node-version.png)
+
+_If the node information is not listed in the package.json file, you can see what version of SPfx is being used based of the version on the version on the packages that starts with `@microsoft/sp...`. And then [this matrix will show you which node version is supported with the individual SPfx version](https://learn.microsoft.com/en-gb/sharepoint/dev/spfx/compatibility)_
 
 Go back to your CLI and use nvm to install or select a supported node version.
 To see what node versions you already have installed you can use `nvm list`
