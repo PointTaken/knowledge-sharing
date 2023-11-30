@@ -18,7 +18,18 @@ Required permissions:
     AuditLog.Read.All
 
 .EXAMPLE
+# Pre-requisite
+Create a App Registration within your Azure AD! You can use this guide official Microsoft Learn guide
+https://learn.microsoft.com/en-us/azure/healthcare-apis/register-application
 
+Remember to take note from:
+* Tenant ID
+* Application ID
+* Application Secret
+
+And your newly created App Reg need a API permission
+* AuditLog.Read.All
+* User.Read.All
 
 .Notes
 
