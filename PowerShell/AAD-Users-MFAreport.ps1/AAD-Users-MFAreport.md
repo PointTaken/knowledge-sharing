@@ -21,6 +21,12 @@ Microsoft.Graph.Identity.Governance
 Microsoft.Graph.Identity.Identity
 az.resources
 
+# COOL EXCEL SHEET!
+
+Please download the MFAreport.xlsx file and place it in C:/Temp/MFAreport/
+It might hopefully connect to the .csv file you have created. 
+If not, it is just to go to datasources in excel and reselect the file.
+
 # The script, enjoy!
 
 ```Powershell
