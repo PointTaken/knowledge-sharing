@@ -1,4 +1,33 @@
-﻿#importing modules
+﻿<#
+.SYNOPSIS
+This script generates a report for Azure Active Directory (AAD) users' authentication methods, RBAC roles, and enterprise roles.
+
+.DESCRIPTION
+The script imports necessary modules, sets variables for connecting to Azure, retrieves users from Azure AD, and loops through each user to gather their authentication methods, RBAC roles, and enterprise roles. The collected data is then stored in a CSV file.
+
+.PARAMETER TenantId
+The Azure AD tenant ID.
+
+.PARAMETER clientid
+The clientid for the service principal used to connect to Azure.
+
+.PARAMETER secret
+The secret for the service principal used to connect to Azure.
+
+.OUTPUTS
+CSV file containing the following information for each user:
+- Sign-in name (UserPrincipalName)
+- Authentication methods
+- RBAC roles
+- Enterprise roles
+
+.NOTES
+- This script requires the "Microsoft.Graph.Identity.Governance" and "Microsoft.Graph.Identity.SignIns" modules to be installed.
+- The script also requires the "az.resources" module to be installed.
+- Make sure to provide the correct values for the TenantId, clientid, and secret parameters.
+#>
+
+#importing modules
 try{import-module "Microsoft.Graph.Identity.Governance" -force -ErrorAction stop}
 catch{install-module "Microsoft.Graph.Identity.Governance" -force}
 try{import-module "Microsoft.Graph.Identity.SignIns" -force -ErrorAction stop}
@@ -7,14 +36,14 @@ try{import-module "az.resources" -force -ErrorAction stop}
 catch{install-module "az.resources" -force}
 
 #setting variables
-$TenantId = "af650eaa-f166-4048-8a86-c1bed50150a1"
-$username = 'd8e333a2-1e45-4767-b801-7903cfa29398'
-$password = 'yuW8Q~uJQgIHVxMYXUoIn3OZihYANkEoGlC8hbx7' | ConvertTo-SecureString -AsPlainText -Force
-$credential = [PSCredential]::New($username,$password)
-$Credential2 = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $username, $password
+$TenantId = "Enter your tenant ID here"
+$clientid = 'Enter your clientid here'
+$secret = 'Enter secret here' | ConvertTo-SecureString -AsPlainText -Force
+$credential = [PSCredential]::New($clientid,$secret)
+$credentialforaz = New-Object -TypeName System.Management.Automation.PSCredential -ArgumentList $clientid, $secret
 
 #connecting to azure
-connect-azaccount -ServicePrincipal -TenantId $TenantId -Credential $credential2
+connect-azaccount -ServicePrincipal -TenantId $TenantId -Credential $credentialforaz
 Connect-MgGraph -TenantId $TenantId -clientsecretcredential $credential
 
 #getting users
@@ -89,5 +118,5 @@ foreach ($dude in $arr){
     #$roles
 }
 #creating csv
-New-Item -ItemType "directory" -Path "c:/temp" -Name "griegseafood"
-$naughtylist |convertto-csv -NoTypeInformation| out-file -FilePath "C:\temp\griegseafood\adminuserslowMFA2.csv" -Encoding utf8 -Force
+New-Item -ItemType "directory" -Path "c:/temp" -Name "MFAreport" -Force
+$naughtylist |convertto-csv -NoTypeInformation| out-file -FilePath "C:\temp\MFAreport\MFAreport.csv" -Encoding utf8 -Force
