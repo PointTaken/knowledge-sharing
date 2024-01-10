@@ -60,7 +60,8 @@ $a = 100 / $arr.count
 $i = 100 / $arr.count 
 
 #looping through users
-foreach ($dude in $arr){
+foreach ($dude in $arr[0..80]){
+
     #progress bar
     $percent = [math]::round($i,2)
     Write-Progress -Activity "Writing report for authentication methods" -Status "$percent% Complete:" -PercentComplete $i
@@ -103,17 +104,27 @@ foreach ($dude in $arr){
     }
     #getting authentication methods
     $authmeth.type | select -unique | % -Process {
-        $auth = ($_+",").Replace("microsoft.graph.","")
+        $auth = $auth+($_+",").Replace("microsoft.graph.","")
         }
     $auth = $auth.Substring(0, $auth.Length - 1)
-
+    $auth = $auth -replace 'phoneAuthenticationMethod','Phone'
+    $auth = $auth -replace 'passwordAuthenticationMethod','Password'
+    $auth = $auth -replace 'windowsHelloForBusinessAuthenticationMethod','Hello for Business'
+    $auth = $auth -replace 'microsoftAuthenticatorAuthenticationMethod','Authenticator'
+    $auth = $auth -replace 'softwareOathAuthenticationMethod','OATH token'
+    $weakauth = if($auth -like "*Password*" -or $auth -like "*Phone*" -and $auth -notlike "*Authenticator*"){"Weak"}else{"Strong"}
+    $priveliged = if($stringofrbacroles -or $stringofentraroles){"Yes"}else{"No"}
     #creating object
     $roles = [PScustomObject]@{
-        signinname= $getuser.UserPrincipalName
-        authenticationmethods= $auth
-        rbacrole= $stringofrbacroles
-        entrarole= $stringofentraroles
-    }
+        Signinname= $getuser.UserPrincipalName
+        Authenticationmethods= $auth
+        Authentiactionstrength= $weakauth
+        Rbacroles= $stringofrbacroles
+        Entraroles= $stringofentraroles
+        Priveliged= $priveliged
+        AccountEnabled= if($getuser.AccountEnabled){"Yes"}else{"No"}
+        }
+    
     $naughtylist += $roles
     #$roles
 }
