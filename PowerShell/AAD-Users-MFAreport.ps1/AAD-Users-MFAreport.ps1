@@ -60,7 +60,7 @@ $a = 100 / $arr.count
 $i = 100 / $arr.count 
 
 #looping through users
-foreach ($dude in $arr[0..80]){
+foreach ($dude in $arr){
 
     #progress bar
     $percent = [math]::round($i,2)
