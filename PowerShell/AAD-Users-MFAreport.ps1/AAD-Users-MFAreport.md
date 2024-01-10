@@ -4,6 +4,7 @@ Created by Odd Daniel Taasaasen
 # Script content
 
 This script generates a report for Azure Active Directory (AAD) users' authentication methods, RBAC roles, and enterprise roles.
+Only Enabled users!
 The script imports necessary modules, sets variables for connecting to Azure, retrieves users from Azure AD, and loops through each user to gather their authentication methods, RBAC roles, and enterprise roles. The collected data is then stored in a CSV file.
 
 # Parameters
@@ -26,6 +27,7 @@ az.resources
 Please download the MFAreport.xlsx file and place it in C:/Temp/MFAreport/
 It might hopefully connect to the .csv file you have created. 
 If not, it is just to go to datasources in excel and reselect the file.
+Remember to go to Data -> Refresh All to get your data.
 
 # The script, enjoy!
 

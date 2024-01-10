@@ -47,7 +47,7 @@ connect-azaccount -ServicePrincipal -TenantId $TenantId -Credential $credentialf
 Connect-MgGraph -TenantId $TenantId -clientsecretcredential $credential
 
 #getting users
-$users = Get-AzADUser
+$users = Get-MgUser -Filter 'accountEnabled eq true' -All
 $arr = @()
 foreach ($user in $users){
     $arr += $user.UserPrincipalName
@@ -112,17 +112,19 @@ foreach ($dude in $arr){
     $auth = $auth -replace 'windowsHelloForBusinessAuthenticationMethod','Hello for Business'
     $auth = $auth -replace 'microsoftAuthenticatorAuthenticationMethod','Authenticator'
     $auth = $auth -replace 'softwareOathAuthenticationMethod','OATH token'
-    $weakauth = if($auth -like "*Password*" -or $auth -like "*Phone*" -and $auth -notlike "*Authenticator*"){"Weak"}else{"Strong"}
-    $priveliged = if($stringofrbacroles -or $stringofentraroles){"Yes"}else{"No"}
+    $auth = $auth -replace 'emailAuthenticationMethod','Email'
+    $auth = $auth -replace 'fido2AuthenticationMethod','FIDO2'
+    $weakauth = if($auth -like "*Password*" -or $auth -like "*Phone*" -and $auth -notlike "*Authenticator*" -and $auth -notlike "*OATH token*" -and $auth -notlike "*FIDO2*"){"Weak"}else{"Strong"}
+    $priveliged = if($stringofrbacroles -or $stringofentraroles){"Priveliged user"}else{"User"}
+
     #creating object
     $roles = [PScustomObject]@{
         Signinname= $getuser.UserPrincipalName
         Authenticationmethods= $auth
-        Authentiactionstrength= $weakauth
+        Authenticationstrength= $weakauth
         Rbacroles= $stringofrbacroles
         Entraroles= $stringofentraroles
         Priveliged= $priveliged
-        AccountEnabled= if($getuser.AccountEnabled){"Yes"}else{"No"}
         }
     
     $naughtylist += $roles
