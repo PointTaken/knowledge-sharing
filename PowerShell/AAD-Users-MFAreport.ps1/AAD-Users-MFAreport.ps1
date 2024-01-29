@@ -39,6 +39,8 @@ try{import-module "Microsoft.Graph.Identity.SignIns" -force -ErrorAction stop}
 catch{install-module "Microsoft.Graph.Identity.SignIns" -force}
 try{import-module "az.resources" -force -ErrorAction stop}
 catch{install-module "az.resources" -force}
+try{import-module "Microsoft.Graph.Users" -force -ErrorAction stop}
+catch{install-module "Microsoft.Graph.Users" -force}
 
 #setting variables
 $TenantId = "Enter your tenant ID here"
