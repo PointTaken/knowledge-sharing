@@ -4,6 +4,7 @@ Created by Odd Daniel Taasaasen
 # Script content
 
 This script generates a report for Azure Active Directory (AAD) users' authentication methods, RBAC roles, and enterprise roles.
+Only Enabled users!
 The script imports necessary modules, sets variables for connecting to Azure, retrieves users from Azure AD, and loops through each user to gather their authentication methods, RBAC roles, and enterprise roles. The collected data is then stored in a CSV file.
 
 # Parameters
@@ -26,6 +27,7 @@ az.resources
 Please download the MFAreport.xlsx file and place it in C:/Temp/MFAreport/
 It might hopefully connect to the .csv file you have created. 
 If not, it is just to go to datasources in excel and reselect the file.
+Remember to go to Data -> Refresh All to get your data.
 
 # The script, enjoy!
 
@@ -64,6 +66,7 @@ $i = 100 / $arr.count
 
 #looping through users
 foreach ($dude in $arr){
+
     #progress bar
     $percent = [math]::round($i,2)
     Write-Progress -Activity "Writing report for authentication methods" -Status "$percent% Complete:" -PercentComplete $i
@@ -106,17 +109,29 @@ foreach ($dude in $arr){
     }
     #getting authentication methods
     $authmeth.type | select -unique | % -Process {
-        $auth = ($_+",").Replace("microsoft.graph.","")
+        $auth = $auth+($_+",").Replace("microsoft.graph.","")
         }
     $auth = $auth.Substring(0, $auth.Length - 1)
+    $auth = $auth -replace 'phoneAuthenticationMethod','Phone'
+    $auth = $auth -replace 'passwordAuthenticationMethod','Password'
+    $auth = $auth -replace 'windowsHelloForBusinessAuthenticationMethod','Hello for Business'
+    $auth = $auth -replace 'microsoftAuthenticatorAuthenticationMethod','Authenticator'
+    $auth = $auth -replace 'softwareOathAuthenticationMethod','OATH token'
+    $auth = $auth -replace 'emailAuthenticationMethod','Email'
+    $auth = $auth -replace 'fido2AuthenticationMethod','FIDO2'
+    $weakauth = if($auth -like "*Password*" -or $auth -like "*Phone*" -and $auth -notlike "*Authenticator*" -and $auth -notlike "*OATH token*" -and $auth -notlike "*FIDO2*"){"Weak"}else{"Strong"}
+    $priveliged = if($stringofrbacroles -or $stringofentraroles){"Priveliged user"}else{"User"}
 
     #creating object
     $roles = [PScustomObject]@{
-        signinname= $getuser.UserPrincipalName
-        authenticationmethods= $auth
-        rbacrole= $stringofrbacroles
-        entrarole= $stringofentraroles
-    }
+        Signinname= $getuser.UserPrincipalName
+        Authenticationmethods= $auth
+        Authenticationstrength= $weakauth
+        Rbacroles= $stringofrbacroles
+        Entraroles= $stringofentraroles
+        Priveliged= $priveliged
+        }
+    
     $naughtylist += $roles
     #$roles
 }
