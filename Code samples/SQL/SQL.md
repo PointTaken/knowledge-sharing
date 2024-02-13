@@ -1,0 +1,1 @@
+script laget eller kopiert som brukes mye / ofte i sql
