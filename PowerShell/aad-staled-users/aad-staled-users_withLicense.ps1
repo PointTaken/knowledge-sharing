@@ -79,56 +79,61 @@ function GetSkuName {
  $headers = @{ 'Authorization' = "Bearer $token" }
  
  
- $queryURL = 'https://graph.microsoft.com/beta/users?$select=displayName,createddatetime,userprincipalname,mail,usertype,signInActivity,accountEnabled,companyName,LicenseAssignmentStates'
- $SignInData = Invoke-RestMethod -Method GET -Uri $queryUrl -Headers $headers -contentType $contentType
- $relLink = $SignInData.'@odata.nextLink'
- 
- $outList = @()
- while ($SignInData.'@odata.nextLink' -ne $null){
-    foreach ($relLink in $SignInData.'@odata.nextLink') {
-       $SignInData = Invoke-RestMethod -Method GET -Uri $relLink -Headers $headers -contentType $contentType
-           foreach ($user in $SignInData.Value) {
-             write-host "successfully got sign in data for user" $User.UserPrincipalName -ForegroundColor Green
-             If ($Null -ne $User.SignInActivity)     {
-                try {
-                   $LastSignIn = Get-Date($User.SignInActivity.LastSignInDateTime)
-                   $DaysSinceSignIn = (New-TimeSpan $LastSignIn).Days 
-                   
-                }
-                catch {
-                }
-             }
-             Else { #No sign in data for user
-                $LastSignIn = "Never or > 90 days" 
-                $DaysSinceSignIn = "N/A" }
-             #get license info
-                $skuid = $null
-                $skuname = $null
-                try {
-                   $skuid = ($user.LicenseAssignmentStates.SkuId).split(" ")
-                }
-                catch {}
-                if ($skuid -eq $null) {
-                   $skuname = "No license"
-                } else{
-                $skuname = GetSkuName -SkuId $skuid -dictionary $dictionary
-                }
-               $Values  = [PSCustomObject] @{
-                   UPN                = $User.UserPrincipalName
-                   DisplayName        = $User.DisplayName
-                   Email              = $User.Mail
-                   Created            = Get-Date($User.CreatedDateTime)
-                   LastSignIn         = $LastSignIn
-                   DaysSinceSignIn    = $DaysSinceSignIn
-                   UserType           = $User.UserType
-                   accountEnabled     = $user.accountEnabled
-                   Company            = $user.companyName
-                   Licenses           = $skuname}
-                 $outList += $Values
-                }
-       }
-   }
- 
- 
+$queryURL = 'https://graph.microsoft.com/beta/users?$select=displayName,createddatetime,userprincipalname,mail,usertype,signInActivity,accountEnabled,companyName,LicenseAssignmentStates'
+$outList = @()
+
+do {
+    $SignInData = Invoke-RestMethod -Method GET -Uri $queryURL -Headers $headers -ContentType $contentType
+
+    foreach ($user in $SignInData.value) {
+        Write-Host "Successfully got sign-in data for user $($user.UserPrincipalName)" -ForegroundColor Green
+        $LastSignIn = "Never or > 90 days"
+        $DaysSinceSignIn = "N/A"
+
+        if ($user.SignInActivity -ne $null) {
+            try {
+                $LastSignIn = Get-Date($user.SignInActivity.LastSignInDateTime)
+                $DaysSinceSignIn = (New-TimeSpan $LastSignIn).Days 
+            }
+            catch {
+                # Handle exception if necessary
+            }
+        }
+
+        # Get license info
+        $skuname = "No license"
+        if ($user.LicenseAssignmentStates.SkuId -ne $null) {
+            $skuid = $user.LicenseAssignmentStates.SkuId -split " "
+            $skuname = GetSkuName -SkuId $skuid -dictionary $dictionary
+        }
+
+        $Values = [PSCustomObject] @{
+            UPN                = $user.UserPrincipalName
+            DisplayName        = $user.DisplayName
+            Email              = $user.Mail
+            Created            = Get-Date($user.CreatedDateTime)
+            LastSignIn         = $LastSignIn
+            DaysSinceSignIn    = $DaysSinceSignIn
+            UserType           = $user.UserType
+            accountEnabled     = $user.accountEnabled
+            Company            = $user.companyName
+            Licenses           = $skuname
+        }
+
+        $outList += $Values
+    }
+
+    $nextLink = $SignInData.'@odata.nextLink'
+    if ($nextLink -ne $null) {
+        $queryURL = $nextLink
+    }
+    else {
+        # Break out of the loop if there's no nextLink
+        break
+    }
+} while ($true)
+
+# Process the collected data
+# For example, output to a CSV file
  write-host $outList.Count "users found" -ForegroundColor Yellow
  $outList | ConvertTo-Csv | Out-File -FilePath $exportpath -Encoding UTF8 
