@@ -14,6 +14,11 @@ The clientid for the service principal used to connect to Azure.
 .PARAMETER secret
 The secret for the service principal used to connect to Azure.
 
+.PREREQUISITES
+- The script requires the "Microsoft.Graph.Identity.Governance" and "Microsoft.Graph.Identity.SignIns" modules to be installed.
+- The service principal used to connect to Azure must have the 
+"User.Read.All", "UserAuthenticationMethod.Read.All" and "EntitlementManagement.Read.All" permissions.
+
 .OUTPUTS
 CSV file containing the following information for each user:
 - Sign-in name (UserPrincipalName)
@@ -34,6 +39,8 @@ try{import-module "Microsoft.Graph.Identity.SignIns" -force -ErrorAction stop}
 catch{install-module "Microsoft.Graph.Identity.SignIns" -force}
 try{import-module "az.resources" -force -ErrorAction stop}
 catch{install-module "az.resources" -force}
+try{import-module "Microsoft.Graph.Users" -force -ErrorAction stop}
+catch{install-module "Microsoft.Graph.Users" -force}
 
 #setting variables
 $TenantId = "Enter your tenant ID here"
@@ -96,7 +103,6 @@ foreach ($dude in $arr){
     #getting enterprise roles
     try{$getentraroles = Get-MgRoleManagementDirectoryRoleAssignment -Filter "PrincipalId eq '$($getuser.Id)'" -ErrorAction stop}catch{write-host "no enterpise roles"}
     if ($getentraroles) {
-
         $getentraroles | % -Process {
         $stringofentraroles = $stringofentraroles+(Get-MgRoleManagementDirectoryRoledefinition -UnifiedRoleDefinitionId $_.RoleDefinitionId).DisplayName+","
         }
@@ -130,6 +136,7 @@ foreach ($dude in $arr){
     $naughtylist += $roles
     #$roles
 }
+
 #creating csv
 New-Item -ItemType "directory" -Path "c:/temp" -Name "MFAreport" -Force
 $naughtylist |convertto-csv -NoTypeInformation| out-file -FilePath "C:\temp\MFAreport\MFAreport.csv" -Encoding utf8 -Force
